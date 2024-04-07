@@ -1,13 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.Collections;
 import java.util.List;
 
 public class FireFox {
@@ -19,25 +17,18 @@ public class FireFox {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement header_1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@class=\"logo-mathway sprite logo-header\"]")));
-        List<WebElement> content_1 = driver.findElements(By.xpath("//*[@data-subject]"));
-
+        WebElement header_1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.
+                xpath("//a[@class=\"logo-mathway sprite logo-header\"]")));
+        List<WebElement> content_1 = driver.findElements(By.
+                xpath("//*[@data-subject]"));
 
         System.out.println("Вывод:\n" + header_1.getAttribute("host"));
         for (int i = 0; i < content_1.size(); i++) {
-            System.out.println(content_1.get(i).getAttribute("text").replaceAll("\\s+", ""));
+            System.out.println(content_1.get(i).getAttribute("text").
+                    replaceAll("\\s+", ""));
         }
+
         driver.quit();
 
-        driver.get("https://ru.onlinemschool.com/");
-
-        WebElement header_2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//img[@src='//ru.onlinemschool.com/skins/logo2.png']")));
-        List<WebElement> content_2 = driver.findElements(By.xpath("//*[@class='oms_definition0']"));
-
-        System.out.println("Вывод:\n" + header_2.getAttribute("host"));
-        for (int i = 0; i < content_2.size(); i++) {
-            System.out.println(content_2.get(i).getAttribute("textContent").replaceAll("\\s+", ""));
-        }
-        driver.quit();
     }
 }

@@ -17,12 +17,15 @@ public class FireFox2 {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement header_2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//img[@src='//ru.onlinemschool.com/skins/logo2.png']")));
-        List<WebElement> content_2 = driver.findElements(By.xpath("//*[@class='oms_definition0']"));
+        WebElement header = wait.until(ExpectedConditions.presenceOfElementLocated(By.
+                xpath("//img[@src='//ru.onlinemschool.com/skins/logo2.png']")));
+        List<WebElement> content_2 = driver.findElements(By.
+                xpath("//*[@class='oms_definition0']"));
 
-        System.out.println("Вывод:\n" + header_2.getAttribute("baseURI"));
+        System.out.println("Вывод:\n" + header.getAttribute("baseURI"));
         for (int i = 0; i < content_2.size(); i++) {
-            System.out.println(content_2.get(i).getAttribute("textContent").replaceAll("\\s+", ""));
+            System.out.println(content_2.get(i).getAttribute("textContent").
+                    replaceAll("\\s+", " "));
         }
 
         driver.quit();

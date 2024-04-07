@@ -20,8 +20,11 @@ public class Edge {
         // поиск веб-элемента + явное ожидание на появление этого элемента
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement header = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1[text()=\"TestNG Documentation\"]")));
-        List<WebElement> content = driver.findElements(By.cssSelector(".toc-link.node-name--H2.ignoreactive,.toc-link.node-name--H3,.toc-link.node-name--H4,.toc-link.node-name--H2,.toc-link.node-name--H5 "));
+        WebElement header = wait.until(ExpectedConditions.presenceOfElementLocated(By.
+                xpath("//h1[text()=\"TestNG Documentation\"]")));
+        List<WebElement> content = driver.findElements(By.cssSelector(".toc-link.node-name--H2." +
+                "ignoreactive,.toc-link.node-name--H3,.toc-link.node-name--H4,.toc-link.node-name--H2," +
+                ".toc-link.node-name--H5 "));
 
         // вывод
         System.out.println("Вывод:\n" + header.getText());
