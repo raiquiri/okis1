@@ -28,6 +28,12 @@ public class FireFox2 {
                     replaceAll("\\s+", " "));
         }
 
+        WebElement firstElement = driver.findElement(By.xpath("//div[contains(@class, 'oms_vmenu_cell') and contains(@onclick, \"go('ru.onlinemschool.com/math/practice/')\")]"));
+        firstElement.click();
+
+        WebElement secondElement = driver.findElement(By.cssSelector("a[href='//ru.onlinemschool.com/math/practice/arithmetic/addition_10/'"));
+        secondElement.click();
+
         driver.quit();
     }
 }
