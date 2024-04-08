@@ -32,10 +32,12 @@ public class Edge {
             System.out.println(content.get(i).getAttribute("text"));
         }
 
-        WebElement firstElement = driver.findElement(By.xpath("//a[text()='3. TestNG Documentation']"));
+        WebElement firstElement = driver.findElement(By.
+                xpath("//a[text()='3. TestNG Documentation']"));
         firstElement.click();
 
-        WebElement secondElement = driver.findElement(By.cssSelector("li.toc-list-item > a[href=\"#_testng_xml\"]"));
+        WebElement secondElement = driver.findElement(By.
+                cssSelector("li.toc-list-item > a[href=\"#_testng_xml\"]"));
         secondElement.click();
 
         // закрытие

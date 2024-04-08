@@ -28,10 +28,12 @@ public class FireFox {
                     replaceAll("\\s+", ""));
         }
 
-        WebElement firstElement = driver.findElement(By.xpath("//i[@class='mw mw-hamburger']"));
+        WebElement firstElement = driver.findElement(By.
+                xpath("//i[@class='mw mw-hamburger']"));
         firstElement.click();
 
-        WebElement secondElement = driver.findElement(By.cssSelector("a.menu-row[data-subject='Trigonometry']"));
+        WebElement secondElement = driver.findElement(By.
+                cssSelector("a.menu-row[data-subject='Trigonometry']"));
         secondElement.click();
 
         driver.quit();
